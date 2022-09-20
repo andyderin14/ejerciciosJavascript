@@ -1215,7 +1215,7 @@ function comprarPrendas() {
           let total = 0;
 
           do {
-                    productoId = parseInt(prompt('Seleccione que indumentaria que desea desea comprar:\nRopa de verano:\n1- Remera ($2.500);\n2- Musculosa ($2000);\n3- Bermuda ($4.000).\nRopa de invierno:\n4- Campera de abrigo ($15.000)\n5- Buzo de polar ($8.000)\n6- Jogging de friza ($5.500).'));
+                    productoId = parseInt(prompt('Seleccione que indumentaria que desea desea comprar:\nRopa de verano:\n1- Remera ($2.500);\n2- Musculosa ($2000);\n3- Bermuda ($4.000).\nRopa de invierno:\n4- Campera de abrigo ($15.000)\n5- Buzo de polar ($8.000)\n6- Jogging de friza ($5.500).\nCosto de envío $500. Superando los $30.000, gratis.'));
           } while (productoId != 1 && productoId != 2 && productoId != 3 && productoId != 4 && productoId != 5 && productoId != 6);
           if (productoId === 1) {
                     nombre = producto1.nombre;
