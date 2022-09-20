@@ -1166,14 +1166,16 @@
 
 
 
-// EJEMPLO PARA EL DESAFÍO COMPLEMENTARIO DE INCORPORAR ARRAYS
+
+
+// EJEMPLO PARA EL DESAFÍO COMPLEMENTARIO DE INCORPORAR ARRAYS - ¡¡¡FUNCIONANDO!!!
 
 function saludar() {
-          alert("Hola bienvenido a Guilbas Urban Wear")
-}
-saludar();
-
-class Productos {
+          alert('Hola bienvenido a Guilbas Urban Wear.')
+      }
+      saludar();
+      
+      class Productos {
           constructor(id, estacion, nombre, precio) {
                     this.id = id,
                               this.estacion = estacion,
@@ -1184,74 +1186,85 @@ class Productos {
           vender() {
                     this.vendido = true;
           }
-}
-function calcularEnvio(subTotal) {
+      }
+      function calcularEnvio(subTotal) {
           if (subTotal >= 30000) {
                     return 0;
           } else {
                     return 500;
           }
-}
-function calcularTotal(envio, subTotal) {
+      }
+      function calcularTotal(envio, subTotal) {
           return subTotal + envio;
-}
-
-const arrayProductos = [];
-const producto1 = new Productos(1, 'Verano', 'Remera', 2500);
-const producto2 = new Productos(2, 'Verano', 'Musculosa', 2500);
-const producto3 = new Productos(3, 'Verano', 'Bermuda', 4000);
-const producto4 = new Productos(4, 'Invierno', 'Campera de abrigo', 15000);
-const producto5 = new Productos(5, 'Invierno', 'Buzo de polar', 8000);
-const producto6 = new Productos(6, 'Invierno', 'Jogging de friza', 5500);
-arrayProductos.push(producto1, producto2, producto3, producto4, producto5, producto6);
-
-function comprarPrendas() {
+      }
+      
+      const arrayProductos = [];
+      const producto1 = new Productos(1, 'Verano', 'Remera', 2500);
+      const producto2 = new Productos(2, 'Verano', 'Musculosa', 2500);
+      const producto3 = new Productos(3, 'Verano', 'Bermuda', 4000);
+      const producto4 = new Productos(4, 'Invierno', 'Campera de abrigo', 15000);
+      const producto5 = new Productos(5, 'Invierno', 'Buzo de polar', 8000);
+      const producto6 = new Productos(6, 'Invierno', 'Jogging de friza', 5500);
+      arrayProductos.push(producto1, producto2, producto3, producto4, producto5, producto6);
+      
+      function comprarPrendas() {
           let subTotal = 0;
           let nombre = '';
+          let estacion = '';
           let envio = 0;
           let precio = 0;
           let productoId = 0;
           let cantidadProducto = 0;
           let total = 0;
-
+      
           do {
                     productoId = parseInt(prompt('Seleccione que indumentaria que desea desea comprar:\nRopa de verano:\n1- Remera ($2.500);\n2- Musculosa ($2000);\n3- Bermuda ($4.000).\nRopa de invierno:\n4- Campera de abrigo ($15.000)\n5- Buzo de polar ($8.000)\n6- Jogging de friza ($5.500).\nCosto de envío $500. Superando los $30.000, gratis.'));
           } while (productoId != 1 && productoId != 2 && productoId != 3 && productoId != 4 && productoId != 5 && productoId != 6);
           if (productoId === 1) {
                     nombre = producto1.nombre;
                     precio = producto1.precio;
+                    estacion = producto1.estacion;
                     producto1.vender();
           } else if (productoId === 2) {
                     nombre = producto2.nombre;
                     precio = producto2.precio;
+                    estacion = producto2.estacion;
                     producto2.vender();
           } else if (productoId === 3) {
                     nombre = producto3.nombre;
                     precio = producto3.precio;
+                    estacion = producto3.estacion;
                     producto3.vender();
           } else if (productoId === 4) {
                     nombre = producto4.nombre;
                     precio = producto4.precio;
+                    estacion = producto4.estacion;
                     producto4.vender();
           } else if (productoId === 5) {
                     nombre = producto5.nombre;
                     precio = producto5.precio;
+                    estacion = producto5.estacion;
                     producto5.vender();
           } else if (productoId === 6) {
                     nombre = producto6.nombre;
                     precio = producto6.precio;
+                    estacion = producto6.estacion;
                     producto6.vender();
           }
-
-          cantidadProducto = parseInt(prompt('Producto elegido: ' + nombre + '.\nIntroduzca la cantidad deseada (sólo números).'));
-
+      
+          do {
+              cantidadProducto = parseInt(prompt('Producto elegido: ' + nombre + '.\nIntroduzca la cantidad deseada (sólo números).'));
+          } while (isNaN(cantidadProducto));
+      
           subTotal = precio * cantidadProducto;
           envio = calcularEnvio(subTotal);
           total = calcularTotal(envio, subTotal);
-
-          alert('Detalle de la compra:\n- Producto: ' + nombre + '.\n- Cantidad de prendas: "' + cantidadProducto + '".\n- Costo del envío: $' + envio + '.\n- Total: $' + total + '.');
-}
-
-
-comprarPrendas();
-console.log(arrayProductos);
+      
+          alert('Detalle de la compra en "Guilbas Urban Wear":\n- Indumentaria de estación: ' + estacion + '.\n- Producto: ' + nombre + '.\n- Cantidad de prendas: "' + cantidadProducto + '".\n- Costo del envío: $' + envio + '.\n- Total: $' + total + '.');
+      }
+      
+      
+      comprarPrendas();
+      console.log(arrayProductos);
+      
+          alert('Desde Guilbas Urban Wear agradecemos tu compra, te esperamos pronto!');
