@@ -1200,7 +1200,7 @@ function saludar() {
       
       const arrayProductos = [];
       const producto1 = new Productos(1, 'Verano', 'Remera', 2500);
-      const producto2 = new Productos(2, 'Verano', 'Musculosa', 2500);
+      const producto2 = new Productos(2, 'Verano', 'Musculosa', 2000);
       const producto3 = new Productos(3, 'Verano', 'Bermuda', 4000);
       const producto4 = new Productos(4, 'Invierno', 'Campera de abrigo', 15000);
       const producto5 = new Productos(5, 'Invierno', 'Buzo de polar', 8000);
