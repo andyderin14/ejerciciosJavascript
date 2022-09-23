@@ -1603,7 +1603,7 @@ arrayProductos.push(producto1, producto2, producto3, producto4, producto5, produ
     function filtrarEstacion () {
               let estacionId = 0;
               do {
-                        estacionId = parseInt(prompt('Seleccione estación:\n1) Verano.\n2) Invierno.'));
+                        estacionId = parseInt(prompt('Seleccione la estación de la indumentaria que desee comprar:\n1- Verano.\n2- Invierno.'));
               } while (estacionId !=1 && estacionId !=2);
               return estacionId;
     }
@@ -1611,7 +1611,7 @@ arrayProductos.push(producto1, producto2, producto3, producto4, producto5, produ
     function consultarOrdenPrecio () {
               let ordenPrecio = 0;
               do {
-                        ordenPrecio = parseInt(prompt('Seleccione orden de precios:\n1) Mayor a menor.\n2) Menor a mayor.'))
+                        ordenPrecio = parseInt(prompt('Seleccione el orden de precios de los productos:\n1- Mayor a menor.\n2- Menor a mayor.'))
               } while (ordenPrecio != 1 && ordenPrecio != 2);
               return ordenPrecio;
     }
@@ -1635,9 +1635,9 @@ arrayProductos.push(producto1, producto2, producto3, producto4, producto5, produ
     function seleccionarProducto (productosFiltrados) {
               let productoId;
               let productoValido = true;
-              let mensaje = 'Lista de productos de '+productosFiltrados[0].estacion+'\nIndique el código de la indumentaria que desea comprar:\n\n';
+              let mensaje = 'Lista de productos de '+productosFiltrados[0].estacion+'.\nIndique el código de la indumentaria que desea comprar:\n(Costo de envío $500. Superando los $30.000, gratis).\n\n';
               productosFiltrados.forEach( (producto) => {
-                        mensaje += producto.id +'= ' + producto.nombre+ '. $'+producto.precio+'.\n';
+                        mensaje += producto.id +'- ' + producto.nombre+ '. $'+producto.precio+'.\n';
               });
               do {
                         productoId = parseInt(prompt(mensaje));
