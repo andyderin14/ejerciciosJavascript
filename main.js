@@ -1170,101 +1170,516 @@
 
 // EJEMPLO PARA EL DESAFÍO COMPLEMENTARIO DE INCORPORAR ARRAYS - ¡¡¡FUNCIONANDO!!!
 
+// function saludar() {
+//           alert('Hola bienvenido a Guilbas Urban Wear.')
+//       }
+//       saludar();
+      
+//       class Productos {
+//           constructor(id, estacion, nombre, precio) {
+//                     this.id = id,
+//                               this.estacion = estacion,
+//                               this.nombre = nombre,
+//                               this.precio = precio,
+//                               this.vendido = false;
+//           }
+//           vender() {
+//                     this.vendido = true;
+//           }
+//       }
+//       function calcularEnvio(subTotal) {
+//           if (subTotal >= 30000) {
+//                     return 0;
+//           } else {
+//                     return 500;
+//           }
+//       }
+//       function calcularTotal(envio, subTotal) {
+//           return subTotal + envio;
+//       }
+      
+//       const arrayProductos = [];
+//       const producto1 = new Productos(1, 'Verano', 'Remera', 2500);
+//       const producto2 = new Productos(2, 'Verano', 'Musculosa', 2000);
+//       const producto3 = new Productos(3, 'Verano', 'Bermuda', 4000);
+//       const producto4 = new Productos(4, 'Invierno', 'Campera de abrigo', 15000);
+//       const producto5 = new Productos(5, 'Invierno', 'Buzo de polar', 8000);
+//       const producto6 = new Productos(6, 'Invierno', 'Jogging de friza', 5500);
+//       arrayProductos.push(producto1, producto2, producto3, producto4, producto5, producto6);
+      
+//       function comprarPrendas() {
+//           let subTotal = 0;
+//           let nombre = '';
+//           let estacion = '';
+//           let envio = 0;
+//           let precio = 0;
+//           let productoId = 0;
+//           let cantidadProducto = 0;
+//           let total = 0;
+      
+//           do {
+//                     productoId = parseInt(prompt('Seleccione que indumentaria desea comprar:\nIndumentaria de verano:\n1- Remera ($2.500);\n2- Musculosa ($2.000);\n3- Bermuda ($4.000).\nIndumentaria de invierno:\n4- Campera de abrigo ($15.000)\n5- Buzo de polar ($8.000)\n6- Jogging de friza ($5.500).\nCosto de envío $500. Superando los $30.000, gratis.'));
+//           } while (productoId != 1 && productoId != 2 && productoId != 3 && productoId != 4 && productoId != 5 && productoId != 6);
+//           if (productoId === 1) {
+//                     nombre = producto1.nombre;
+//                     precio = producto1.precio;
+//                     estacion = producto1.estacion;
+//                     producto1.vender();
+//           } else if (productoId === 2) {
+//                     nombre = producto2.nombre;
+//                     precio = producto2.precio;
+//                     estacion = producto2.estacion;
+//                     producto2.vender();
+//           } else if (productoId === 3) {
+//                     nombre = producto3.nombre;
+//                     precio = producto3.precio;
+//                     estacion = producto3.estacion;
+//                     producto3.vender();
+//           } else if (productoId === 4) {
+//                     nombre = producto4.nombre;
+//                     precio = producto4.precio;
+//                     estacion = producto4.estacion;
+//                     producto4.vender();
+//           } else if (productoId === 5) {
+//                     nombre = producto5.nombre;
+//                     precio = producto5.precio;
+//                     estacion = producto5.estacion;
+//                     producto5.vender();
+//           } else if (productoId === 6) {
+//                     nombre = producto6.nombre;
+//                     precio = producto6.precio;
+//                     estacion = producto6.estacion;
+//                     producto6.vender();
+//           }
+      
+//           do {
+//               cantidadProducto = parseInt(prompt('Producto elegido: ' + nombre + '.\nIntroduzca la cantidad deseada (sólo números).'));
+//           } while (isNaN(cantidadProducto));
+      
+//           subTotal = precio * cantidadProducto;
+//           envio = calcularEnvio(subTotal);
+//           total = calcularTotal(envio, subTotal);
+      
+//           alert('Detalle de la compra en "Guilbas Urban Wear":\n- Indumentaria de estación: ' + estacion + '.\n- Producto: ' + nombre + '.\n- Cantidad de prendas: "' + cantidadProducto + '".\n- Costo del envío: $' + envio + '.\n- Total: $' + total + '.');
+//       }
+      
+      
+//       comprarPrendas();
+//       console.log(arrayProductos);
+      
+//           alert('Desde Guilbas Urban Wear agradecemos tu compra, te esperamos pronto!');
+
+
+
+
+
+// Callback --> Función que llama a otra función, o que recibe por parámetro a otra función.
+
+
+
+
+
+// FUNCIONES DE ORDEN SUPERIOR
+
+
+// forEach() --> Ayuda a recorrer cada elemento de un Array
+
+// (Recibe un callback o función anónima como parámetro.)
+
+// const numeros = [1, 2, 3, 4, 5, 6]
+// numeros.forEach((num) => {
+//     console.log(num)
+// })
+// ---------------------------------------
+// const numeros = [1, 2, 3, 4, 5, 6]
+// numeros.forEach (function (num) {
+//     console.log(num);
+// })
+// ---------------------------------------
+// const cursos = [
+//     {nombre: 'Javascript', precio: 18000},
+//     {nombre: 'ReactJS', precio: 22000},
+//     {nombre: 'AngularJS', precio: 20000},
+//     {nombre: 'Desarrollo Web', precio: 16000},
+// ];
+// cursos.forEach( (curso) =>  {
+//     console.log(curso.nombre);
+//     console.log(curso.precio);
+// } );
+
+
+
+
+// find () --> Recibe una función de comparación por parametro.
+
+// Recorre el array de objetos,y devuelve la primer coincidencia que encuentre si no devuelve undefined.
+
+// const cursos = [
+//     {nombre: 'Javascript', precio: 15000},
+//     {nombre: 'ReactJS', precio: 22000},
+// ]
+
+// const resultado = cursos.find((el) => el.nombre === 'Javascript');
+// const resultado2 = cursos.find ((el) => el.nombre === 'Desarrollo Web');
+
+// console.log(resultado); // {nombre: 'Javascript', precio: 15000}
+// console.log(resultado2); // undefined
+// -------------------------------------------------------------------
+// const numeros = [1, 2, 3, 4, 5];
+// const resultado = numeros.find( numero => numero > 2); // devuelve el 1er numero mayor a 2 = 3
+// console.log(resultado);
+// -------------------------------------------------------------------
+// const cursos = [
+//     {nombre: 'Javascript', precio: 15000},
+//     {nombre: 'ReactJS', precio: 22000},
+// ];
+// const resultado = cursos.find(curso => curso.nombre === 'ReactJS');
+// console.log(resultado) // {nombre: 'ReactJS', precio: 22000}
+
+
+
+
+
+// filter () --> Devuelve todas las coincidencias al igual que "find()", si no hay coincidencias retorna un array vacío.
+
+// const cursos = [
+//     {nombre: 'Javascript', precio: 18000},
+//     {nombre: 'ReactJS', precio: 22000},
+//     {nombre: 'AngularJS', precio: 20000},
+//     {nombre: 'Desarrollo Web', precio: 16000},
+// ];
+
+// const resultado = cursos.filter((el) => el.nombre.includes('JS'));
+// const resultado2 = cursos.filter((el) => el.precio < 14000);
+
+// console.log(resultado); //     {nombre: 'ReactJS', precio: 22000},
+//                         //    {nombre: 'AngularJS', precio: 20000},
+// console.log(resultado2); // Array vacío
+// ------------------------------------------------------------------------
+// const numeros = [1, 2, 3, 4, 5, 6];
+// const cantidad = numeros.filter( numero => numero > 2);
+// console.log(cantidad); // [3, 4, 5, 6]
+// ------------------------------------------------------------------------
+// const nombres = ['Ana', 'Pepe', 'Jose', 'Juancito', 'Karla'];
+// const filtro1 = nombres.filter(nombre => nombre.includes('n'));
+// console.log(filtro1); // ['Ana', 'Juancito']
+// ------------------------------------------------------------------------
+// const cursos = [
+//     {nombre: 'Javascript', precio: 18000},
+//     {nombre: 'ReactJS', precio: 22000},
+//     {nombre: 'AngularJS', precio: 20000},
+//     {nombre: 'Desarrollo Web', precio: 16000},
+// ];
+// const resultado = cursos.filter(elementos => elementos.precio < 21000 );
+// console.log(resultado); // {nombre: 'Javascript', precio: 18000}
+//                         // {nombre: 'AngularJS', precio: 20000}
+//                         // {nombre: 'Desarrollo Web', precio: 16000}
+// ------------------------------------------------------------------------
+
+// ESTE EJEMPLO PUEDO USAR PARA LA 1ER ENTREGA DEL PROYECTO FINAL
+
+// const indumentaria = [
+//     {estacion: 'Verano', nombre: 'Remera', precio: 2500},
+//     {estacion: 'Verano', nombre: 'Musculosa', precio: 2000},
+//     {estacion: 'Verano', nombre: 'Musculosa', precio: 4000},
+//     {estacion: 'Invierno', nombre: 'Campera de abrigo', precio: 15000},
+//     {estacion: 'Invierno', nombre: 'Buzo de polar', precio: 8000},
+//     {estacion: 'Invierno', nombre: 'Jogging de friza', precio: 5500},
+// ];
+// const resultado1 = indumentaria.filter(precios => precios.precio < 10000 );
+// const resultado2 = indumentaria.filter(estaciones => estaciones.estacion === 'Verano');
+// console.log(resultado1);// {estacion: 'Verano', nombre: 'Remera', precio: 2500}
+//                         // {estacion: 'Verano', nombre: 'Remera', precio: 2500}
+//                         // {estacion: 'Verano', nombre: 'Musculosa', precio: 2000}
+//                         // {estacion: 'Verano', nombre: 'Musculosa', precio: 4000}
+//                         // {estacion: 'Invierno', nombre: 'Buzo de polar', precio: 8000}
+//                         // {estacion: 'Invierno', nombre: 'Jogging de friza', precio: 5500}
+
+// console.log(resultado2);// {estacion: 'Verano', nombre: 'Remera', precio: 2500}
+//                         // {estacion: 'Verano', nombre: 'Remera', precio: 2500}
+//                         // {estacion: 'Verano', nombre: 'Musculosa', precio: 2000}
+// --------------------------------------------------------------------------------------------
+
+
+// some() --> Devuelve true o false cuando encuentre un valor
+
+// const cursos = [
+//     {nombre: 'Javascript', precio: 18000},
+//     {nombre: 'ReactJS', precio: 22000},
+//     {nombre: 'AngularJS', precio: 20000},
+//     {nombre: 'Desarrollo Web', precio: 16000},
+// ];
+// console.log(cursos.some(elemento => elemento.nombre === 'AngularJS')); // true
+// console.log(cursos.some(elemento => elemento.nombre === 'Angular')); // false
+
+
+
+
+// map() --> Permite obtener un nuevo array pero con una transformación
+
+// const numeros = [1, 2, 3, 4, 5, 6]
+// const porDos = numeros.map(numero => numero * 2);
+// console.log(porDos); // [2, 4, 6, 8, 10, 12]
+// ----------------------------------------------------------------------
+// const numeros = [1, 2, 3, 4, 5, 6]
+// const masCien = numeros.map(numero => numero + 100);
+// console.log(masCien); // [101, 102, 103, 104, 105, 106]
+// ----------------------------------------------------------------------
+// const cursos = [
+//     {nombre: 'Javascript', precio: 18000},
+//     {nombre: 'ReactJS', precio: 22000},
+//     {nombre: 'AngularJS', precio: 20000},
+//     {nombre: 'Desarrollo Web', precio: 16000},
+// ];
+
+// const descuento = cursos.map( desc => desc.precio * 0.20);
+
+// console.log(descuento); // [3600, 4400, 4000, 3200]
+// ----------------------------------------------------------------------
+// const cursos = [
+//     {nombre: 'Javascript', precio: 18000},
+//     {nombre: 'ReactJS', precio: 22000},
+//     {nombre: 'AngularJS', precio: 20000},
+//     {nombre: 'Desarrollo Web', precio: 16000},
+// ];
+
+// const materias = cursos.map( curso => curso.nombre);
+
+// console.log(materias); // ['Javascript', 'ReactJS', 'AngularJS', 'Desarrollo Web']
+// ----------------------------------------------------------------------------------
+// const cursos = [
+//     {nombre: 'Javascript', precio: 18000},
+//     {nombre: 'ReactJS', precio: 22000},
+//     {nombre: 'AngularJS', precio: 20000},
+//     {nombre: 'Desarrollo Web', precio: 16000},
+// ];
+
+// const descuento = cursos.map( desc => (desc.precio - (desc.precio * 0.20)));
+// const materia = cursos.map(materias =>materias.nombre);
+
+// console.log(descuento); // [14400, 17600, 16000, 12800]
+// console.log(materia); // ['Javascript', 'ReactJS', 'AngularJS', 'Desarrollo Web']
+// ----------------------------------------------------------------------------------
+// const carreras = [
+//     {nombre: 'Javascript', precio: 18000},
+//     {nombre: 'ReactJS', precio: 22000},
+//     {nombre: 'AngularJS', precio: 20000},
+//     {nombre: 'Desarrollo Web', precio: 16000},
+// ];
+
+// const materias = carreras.map( curso => {
+//     return {
+//         nombre: curso.nombre,
+//         precio: (curso.precio - (curso.precio * 0.20)),
+//     }
+// });
+// console.log(materias);
+// -----------------------------------------------------------------------------------
+
+
+
+// reduce() --> suma los números que se encuentran dentro de un array (carrito de compras)
+
+// const numeros = [1, 2, 3, 4, 5, 6];
+// const total = numeros.reduce((acumulador, numero) => acumulador + numero, 0);
+// console.log(total); // 21
+// ----------------------------------------------------------------------------------
+
+// EJEMPLO CARRITO DE COMPRAS
+
+//  const carritoDecompras = [
+//         {estacion: 'Verano', nombre: 'Remera', precio: 2500, cantidad: 5},
+//         {estacion: 'Verano', nombre: 'Musculosa', precio: 2000, cantidad: 2},
+//         {estacion: 'Verano', nombre: 'Bermuda', precio: 4000, cantidad: 4},
+//         {estacion: 'Invierno', nombre: 'Campera de abrigo', precio: 15000, cantidad: 3},
+//         {estacion: 'Invierno', nombre: 'Buzo de polar', precio: 8000, cantidad: 2},
+//         {estacion: 'Invierno', nombre: 'Jogging de friza', precio: 5500, cantidad: 2},
+//  ];
+
+//  const cantidadTotal = carritoDecompras.reduce( (acc, item) => acc + item.cantidad, 0);
+//  const precioTotal = carritoDecompras.reduce((acc, item) => acc + (item.cantidad * item.precio), 0);
+
+//  console.log(cantidadTotal, precioTotal);
+// -----------------------------------------------------------------------------------------------------
+
+// sort () --> Ordena los número de manera creciente o decreciente
+// ordena de mayo a menor / de la A a la Z
+
+
+// const numeros = [40, 1, 5, 200];
+// numeros.sort((a, b) => a - b );
+// console.log(numeros); // [1, 5, 40, 200] Ascendente
+// ------------------------------------------------------------------------------
+// const numeros = [40, 1, 5, 200];
+// numeros.sort((a, b) => b - a);
+// console.log(numeros); // [200, 40, 5, 1] Descendente
+// ----------------------------------------------------------------------
+// const carritoDecompras = [
+//             {estacion: 'Verano', nombre: 'Remera', precio: 2500, cantidad: 5},
+//             {estacion: 'Verano', nombre: 'Musculosa', precio: 2000, cantidad: 2},
+//             {estacion: 'Verano', nombre: 'Bermuda', precio: 4000, cantidad: 4},
+//             {estacion: 'Invierno', nombre: 'Campera de abrigo', precio: 15000, cantidad: 3},
+//             {estacion: 'Invierno', nombre: 'Buzo de polar', precio: 8000, cantidad: 2},
+//             {estacion: 'Invierno', nombre: 'Jogging de friza', precio: 5500, cantidad: 2},
+// ];
+
+// carritoDecompras.sort((a, b) => a.precio - b.precio); // ( menor a mayor)
+
+
+// console.log(carritoDecompras); // {estacion: 'Verano', nombre: 'Remera', precio: 2500, cantidad: 5}
+                                // {estacion: 'Verano', nombre: 'Musculosa', precio: 2000, cantidad: 2}
+                                // {estacion: 'Verano', nombre: 'Bermuda', precio: 4000, cantidad: 4}
+                                // {estacion: 'Invierno', nombre: 'Jogging de friza', precio: 5500, cantidad: 2}
+                                // {estacion: 'Invierno', nombre: 'Buzo de polar', precio: 8000, cantidad: 2}
+                                // {estacion: 'Invierno', nombre: 'Campera de abrigo', precio: 15000, cantidad: 3}
+// --------------------------------------------------------------------------------------------------------------------
+// const carritoDecompras = [
+//             {estacion: 'Verano', nombre: 'Remera', precio: 2500, cantidad: 5},
+//             {estacion: 'Verano', nombre: 'Musculosa', precio: 2000, cantidad: 2},
+//             {estacion: 'Verano', nombre: 'Bermuda', precio: 4000, cantidad: 4},
+//             {estacion: 'Invierno', nombre: 'Campera de abrigo', precio: 15000, cantidad: 3},
+//             {estacion: 'Invierno', nombre: 'Buzo de polar', precio: 8000, cantidad: 2},
+//             {estacion: 'Invierno', nombre: 'Jogging de friza', precio: 5500, cantidad: 2},
+// ];
+
+// carritoDecompras.sort((a, b) => b.precio - a.precio); // ( mayor a menor)
+
+// console.log(carritoDecompras); // {estacion: 'Invierno', nombre: 'Campera de abrigo', precio: 15000, cantidad: 3}
+                                    // {estacion: 'Invierno', nombre: 'Buzo de polar', precio: 8000, cantidad: 2}
+                                    // {estacion: 'Invierno', nombre: 'Jogging de friza', precio: 5500, cantidad: 2}
+                                    // {estacion: 'Verano', nombre: 'Bermuda', precio: 4000, cantidad: 4}
+                                    // {estacion: 'Verano', nombre: 'Remera', precio: 2500, cantidad: 5}
+                                    // {estacion: 'Verano', nombre: 'Musculosa', precio: 2000, cantidad: 2}
+// -----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+// PRIMERA ENTREGA DEL PROYECTO FINAL
+
 function saludar() {
-          alert('Hola bienvenido a Guilbas Urban Wear.')
-      }
-      saludar();
-      
-      class Productos {
-          constructor(id, estacion, nombre, precio) {
-                    this.id = id,
-                              this.estacion = estacion,
-                              this.nombre = nombre,
-                              this.precio = precio,
-                              this.vendido = false;
-          }
-          vender() {
-                    this.vendido = true;
-          }
-      }
-      function calcularEnvio(subTotal) {
-          if (subTotal >= 30000) {
-                    return 0;
-          } else {
-                    return 500;
-          }
-      }
-      function calcularTotal(envio, subTotal) {
-          return subTotal + envio;
-      }
-      
-      const arrayProductos = [];
-      const producto1 = new Productos(1, 'Verano', 'Remera', 2500);
-      const producto2 = new Productos(2, 'Verano', 'Musculosa', 2000);
-      const producto3 = new Productos(3, 'Verano', 'Bermuda', 4000);
-      const producto4 = new Productos(4, 'Invierno', 'Campera de abrigo', 15000);
-      const producto5 = new Productos(5, 'Invierno', 'Buzo de polar', 8000);
-      const producto6 = new Productos(6, 'Invierno', 'Jogging de friza', 5500);
-      arrayProductos.push(producto1, producto2, producto3, producto4, producto5, producto6);
-      
-      function comprarPrendas() {
-          let subTotal = 0;
-          let nombre = '';
-          let estacion = '';
-          let envio = 0;
-          let precio = 0;
-          let productoId = 0;
-          let cantidadProducto = 0;
-          let total = 0;
-      
-          do {
-                    productoId = parseInt(prompt('Seleccione que indumentaria desea comprar:\nIndumentaria de verano:\n1- Remera ($2.500);\n2- Musculosa ($2.000);\n3- Bermuda ($4.000).\nIndumentaria de invierno:\n4- Campera de abrigo ($15.000)\n5- Buzo de polar ($8.000)\n6- Jogging de friza ($5.500).\nCosto de envío $500. Superando los $30.000, gratis.'));
-          } while (productoId != 1 && productoId != 2 && productoId != 3 && productoId != 4 && productoId != 5 && productoId != 6);
-          if (productoId === 1) {
-                    nombre = producto1.nombre;
-                    precio = producto1.precio;
-                    estacion = producto1.estacion;
-                    producto1.vender();
-          } else if (productoId === 2) {
-                    nombre = producto2.nombre;
-                    precio = producto2.precio;
-                    estacion = producto2.estacion;
-                    producto2.vender();
-          } else if (productoId === 3) {
-                    nombre = producto3.nombre;
-                    precio = producto3.precio;
-                    estacion = producto3.estacion;
-                    producto3.vender();
-          } else if (productoId === 4) {
-                    nombre = producto4.nombre;
-                    precio = producto4.precio;
-                    estacion = producto4.estacion;
-                    producto4.vender();
-          } else if (productoId === 5) {
-                    nombre = producto5.nombre;
-                    precio = producto5.precio;
-                    estacion = producto5.estacion;
-                    producto5.vender();
-          } else if (productoId === 6) {
-                    nombre = producto6.nombre;
-                    precio = producto6.precio;
-                    estacion = producto6.estacion;
-                    producto6.vender();
-          }
-      
-          do {
-              cantidadProducto = parseInt(prompt('Producto elegido: ' + nombre + '.\nIntroduzca la cantidad deseada (sólo números).'));
-          } while (isNaN(cantidadProducto));
-      
-          subTotal = precio * cantidadProducto;
-          envio = calcularEnvio(subTotal);
-          total = calcularTotal(envio, subTotal);
-      
-          alert('Detalle de la compra en "Guilbas Urban Wear":\n- Indumentaria de estación: ' + estacion + '.\n- Producto: ' + nombre + '.\n- Cantidad de prendas: "' + cantidadProducto + '".\n- Costo del envío: $' + envio + '.\n- Total: $' + total + '.');
-      }
-      
-      
-      comprarPrendas();
-      console.log(arrayProductos);
-      
-          alert('Desde Guilbas Urban Wear agradecemos tu compra, te esperamos pronto!');
+    alert('Hola bienvenido a Guilbas Urban Wear.')
+}
+saludar();
+
+class Productos {
+    constructor(id, estacion, nombre, precio) {
+              this.id = id,
+                        this.estacion = estacion,
+                        this.nombre = nombre,
+                        this.precio = precio,
+                        this.vendido = false;
+    }
+    vender() {
+              this.vendido = true;
+    }
+}
+function calcularEnvio(subTotal) {
+    if (subTotal >= 30000) {
+              return 0;
+    } else {
+              return 500;
+    }
+}
+
+const arrayProductos = [];
+const producto1 = new Productos(1, 'Verano', 'Remera', 2500);
+const producto2 = new Productos(2, 'Verano', 'Musculosa', 2000);
+const producto3 = new Productos(3, 'Verano', 'Bermuda', 4000);
+const producto4 = new Productos(4, 'Invierno', 'Campera de abrigo', 15000);
+const producto5 = new Productos(5, 'Invierno', 'Buzo de polar', 8000);
+const producto6 = new Productos(6, 'Invierno', 'Jogging de friza', 5500);
+arrayProductos.push(producto1, producto2, producto3, producto4, producto5, producto6);
+
+    const ordenarMenorMayor = () => {
+    arrayProductos.sort((a,b) => a.precio - b.precio);
+    }
+
+    const ordenarMayorMenor = () => {
+    arrayProductos.sort((a,b) => b.precio - a.precio);
+    }
+
+    function filtrarEstacion () {
+              let estacionId = 0;
+              do {
+                        estacionId = parseInt(prompt('Seleccione estación:\n1) Verano;\n2) Invierno.'));
+              } while (estacionId !=1 && estacionId !=2);
+              return estacionId;
+    }
+
+    function consultarOrdenPrecio () {
+              let ordenPrecio = 0;
+              do {
+                        ordenPrecio = parseInt(prompt('Seleccione orden de precios:\n1) Mayor a menor;\n2) Menor a mayor."'))
+              } while (ordenPrecio != 1 && ordenPrecio != 2);
+              return ordenPrecio;
+    }
+
+    function filtrarProductos (estacionId, ordenPrecio) {
+              let productosFiltrados;
+                        if (estacionId === 1) {
+                                  productosFiltrados = arrayProductos.filter(estaciones => estaciones.estacion === 'Verano');
+                        } else if (estacionId === 2) {
+                                  productosFiltrados = arrayProductos.filter(estaciones => estaciones.estacion === 'Invierno');
+                        }
+
+                        if (ordenPrecio === 1) {
+                                  productosFiltrados.sort((a,b) => b.precio - a.precio);
+                        } else if (ordenPrecio === 2) {
+                                  productosFiltrados.sort((a,b) => a.precio - b.precio);
+                        }
+                        return productosFiltrados;
+    }
+
+    function seleccionarProducto (productosFiltrados) {
+              let productoId;
+              let productoValido = true;
+              let mensaje = 'Lista de productos de '+productosFiltrados[0].estacion+'\nIndique el código de la indumentaria que desea comprar:\n';
+              productosFiltrados.forEach( (producto) => {
+                        mensaje += producto.id +'= ' + producto.nombre+ '. $'+producto.precio+'.\n';
+              });
+              do {
+                        productoId = parseInt(prompt(mensaje));
+                        productoValido = validar(productoId, productosFiltrados);
+                        } while (!productoValido);
+                        return productoId;
+              }
+
+    function validar(productoId, productosFiltrados) {
+              let valido = false;
+              productosFiltrados.forEach( (producto) => {
+                        if (producto.id === productoId) {
+                                  valido = true;
+                        }
+              });
+              return valido;
+    }
+
+    function comprarProducto(productosFiltrados, productoId) {
+              let subTotal = 0;
+              let envio = 0;
+              let cantidadProducto = 0;
+              let producto = productosFiltrados.find( p => p.id === productoId);
+
+              do {
+                        cantidadProducto = parseInt(prompt('Producto elegido: ' + producto.nombre + '.\nIntroduzca la cantidad deseada (sólo números).'));
+              } while (isNaN(cantidadProducto));
+
+              subTotal = producto.precio * cantidadProducto;
+              envio = calcularEnvio(subTotal);
+              total = subTotal + envio;
+
+              producto.vender();
+              alert('Detalle de la compra en "Guilbas Urban Wear":\n- Indumentaria de estación: ' + producto.estacion + '.\n- Producto: ' + producto.nombre + '.\n- Cantidad de prendas: "' + cantidadProducto + '".\n- Costo del envío: $' + envio + '.\n- Total: $' + total + '.');
+    }
+
+    let estacionid = filtrarEstacion();
+    let ordenPrecio = consultarOrdenPrecio();
+    let productosFiltrados = filtrarProductos(estacionid, ordenPrecio);
+    let productoId = seleccionarProducto(productosFiltrados);
+    comprarProducto(productosFiltrados, productoId);
+
+    console.log(productosFiltrados);
+
+    alert('Desde Guilbas Urban Wear agradecemos tu compra, te esperamos pronto!');
