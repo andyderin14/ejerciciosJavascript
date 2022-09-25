@@ -1683,3 +1683,159 @@ arrayProductos.push(producto1, producto2, producto3, producto4, producto5, produ
     console.log(productosFiltrados);
 
     alert('Desde Guilbas Urban Wear agradecemos tu compra, te esperamos pronto!');
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+// DOM (Modelo de Objetos del Documento) --> estructura de objetos que se genera en nuestro navegador, que es una representación se nuestro HTML
+
+
+
+// getElementById() --> Sirve para acceder a un elemento de la estructura HTML, "utilizando su atributo ID como identificación".
+// innerHTML --> Establece o devuelve el contenido HTML de un elemento.
+
+// const div = document.getElementById('app');
+// console.log(div.innerHTML);
+
+// const parrafo = document.getElementById('parrafo1');
+// console.log(parrafo.innerHTML);
+
+
+// getElementByClassName() --> Sirve para acceder a un conjunto de elementos de la estrucura HTML, "utilizando su atributo class como identificación"
+// (se retornara un Array de elementos con todas las coincidencias).
+
+// const paises = document.getElementsByClassName('paises');
+// console.log(paises);
+// console.log(paises[0].innerHTML);
+// console.log(paises[1].innerHTML);
+// console.log(paises[2].innerHTML);
+
+
+// getElementByTagName() --> Sirve para acceder a un conjunto de elementos de la estructura HTML, "utilizando su nombre de etiqueta como identificación".
+// (esta opción es la menos específica de todas, ya que es muy probable que las etiquetas se repitan en el código HTML).
+
+// const productos = document.getElementsByTagName('div');
+// console.log(productos[0].innerHTML);
+// console.log(productos[1].innerHTML);
+// console.log(productos[2].innerHTML);
+
+
+// HTML Collection cn FOR ... OF
+
+// let paises = document.getElementsByClassName('paises');
+// for (const pais of paises) {
+//     console.log(pais.innerHTML);
+// }
+
+// let productos = document.getElementsByTagName('div');
+// for (const div of productos) {
+//     console.log(div.innerHTML);
+// }
+
+
+// innerText --> Nos permite modificar su nodo de texto. (acceder y/o modiciar el contenido textual de algún elemento del DOM).
+
+// let titulo = document.getElementById('titulo');
+// console.log(titulo.innerText);
+
+// titulo.innerText = '@Tyson.dev';
+// console.log(titulo.innerText);
+
+
+// const nombreUsuario = prompt('Hola man, ingresa tu nombre:');
+// parrafo1.innerText = 'Hi my name is ' + nombreUsuario + '!!!!!!!!!!!';
+
+
+// innerHTML
+
+// let productos = document.getElementById('productosTyson');
+// productos.innerHTML = '<h2>Hola Tyson!</h2><p>Look for your best version</>';
+
+
+// className --> Podemos acceder al atributo class del mismo y defini cuáles van a ser sus clases.
+
+// let productos = document.getElementById('productosTyson');
+// productos.className = 'container row';
+
+
+// document.createElement() --> Ayuda para que podamos crear un elemento HTML por medio del DOM
+// (debe agregarse como hijofel nodo creaco con append() al body o  a otro nodo del domuento actual).
+
+// let parrafo = document.createElement('p');
+// parrafo.innerHTML = '<h2>Hola Tyson!!!</h2>';
+// document.body.append(parrafo);
+
+
+// remove() --> Permite eliminar un nodo seleccionado del DOM.
+
+// let titulo = document.getElementById('titulo');
+// titulo.remove();
+
+// let paises = document.getElementsByClassName('paises');
+// paises[1].remove();
+
+
+// OBTENER DATOS DE INPUTS
+
+// document.getElementById('name').value = 'Milton';
+// document.getElementById('years').value = 20;
+
+
+
+
+// Creando opciones desde un Array
+
+// Obtenemos el nodo donde vamos a agregar los nuevos elementos.
+// let container = document.getElementById('familia');
+
+// Array con la información a agregar
+// let familia = ['Pedro', 'Carmen', 'Andy', 'Santino', 'Dukecito'];
+
+// Iteramos el array con for...of
+// for (const family of familia) {
+
+       // Creamos un nodo <li> y agregamos al padre en cada ciclo
+//     let li = document.createElement('li');
+//     li.innerHTML = family;
+//     container.appendChild(li);
+// }
+
+
+
+// PLANTILLAS LITERALES
+
+// let producto = { id: 1, estacion: 'Verano', nombre: 'Remera', precio: 2500 }
+
+// let concatenando = 'ID: '+producto.id+'.\nEstación: '+producto.estacion+'.\nProducto: '+producto.nombre+'.\nPrecio: $'+producto.precio+'.';
+
+// let plantilla = `ID: ${producto.id}. - Estación:  ${producto.estacion}. - Producto: ${producto.nombre}. - Precio: ${producto.precio}.`;
+
+// console.log(plantilla);
+
+
+
+// CREANDO ELEMENTOS DESDE OBJETOS
+
+// const productos = [{ id: 1, estacion: 'Verano', nombre: 'Remera', precio: 2500 },
+//                    { id: 2, estacion: 'Verano', nombre: 'Musculosa', precio: 2000 },
+//                    { id: 3, estacion: 'Verano', nombre: 'Remera', precio: 2500 },
+//                    { id: 4, estacion: 'Invierno', nombre: 'Campera de abrigo', precio: 2500 },
+//                    { id: 5, estacion: 'Invierno', nombre: 'Buzo de polar', precio: 2500 },
+//                    { id: 6, estacion: 'Invierno', nombre: 'Jogging de friza', precio: 2500 }];
+
+// for ( const producto of productos) {
+//     let div = document.createElement('div');
+
+//     div.innerHTML = `<div class='container'>
+//             <h2> ID: ${producto.id}</h2>
+//             <h2> Estación: ${producto.estacion}</h2>
+//             <h2> Producto: ${producto.nombre}</h2>
+//             <h2> $ ${producto.precio}</h2>
+//     </div>`;
+//     document.body.appendChild(div);
+// }
+
+
+
+// Ejemplo tienda online
+
