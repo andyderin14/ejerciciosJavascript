@@ -1558,131 +1558,131 @@
 
 // PRIMERA ENTREGA DEL PROYECTO FINAL
 
-function saludar() {
-    alert('Hola bienvenido a Guilbas Urban Wear.')
-}
-saludar();
+// function saludar() {
+//     alert('Hola bienvenido a Guilbas Urban Wear.')
+// }
+// saludar();
 
-class Productos {
-    constructor(id, estacion, nombre, precio) {
-              this.id = id,
-                        this.estacion = estacion,
-                        this.nombre = nombre,
-                        this.precio = precio,
-                        this.vendido = false;
-    }
-    vender() {
-              this.vendido = true;
-    }
-}
-function calcularEnvio(subTotal) {
-    if (subTotal >= 30000) {
-              return 0;
-    } else {
-              return 500;
-    }
-}
+// class Productos {
+//     constructor(id, estacion, nombre, precio) {
+//               this.id = id,
+//                         this.estacion = estacion,
+//                         this.nombre = nombre,
+//                         this.precio = precio,
+//                         this.vendido = false;
+//     }
+//     vender() {
+//               this.vendido = true;
+//     }
+// }
+// function calcularEnvio(subTotal) {
+//     if (subTotal >= 30000) {
+//               return 0;
+//     } else {
+//               return 500;
+//     }
+// }
 
-const arrayProductos = [];
-const producto1 = new Productos(1, 'Verano', 'Remera', 2500);
-const producto2 = new Productos(2, 'Verano', 'Musculosa', 2000);
-const producto3 = new Productos(3, 'Verano', 'Bermuda', 4000);
-const producto4 = new Productos(4, 'Invierno', 'Campera de abrigo', 15000);
-const producto5 = new Productos(5, 'Invierno', 'Buzo de polar', 8000);
-const producto6 = new Productos(6, 'Invierno', 'Jogging de friza', 5500);
-arrayProductos.push(producto1, producto2, producto3, producto4, producto5, producto6);
+// const arrayProductos = [];
+// const producto1 = new Productos(1, 'Verano', 'Remera', 2500);
+// const producto2 = new Productos(2, 'Verano', 'Musculosa', 2000);
+// const producto3 = new Productos(3, 'Verano', 'Bermuda', 4000);
+// const producto4 = new Productos(4, 'Invierno', 'Campera de abrigo', 15000);
+// const producto5 = new Productos(5, 'Invierno', 'Buzo de polar', 8000);
+// const producto6 = new Productos(6, 'Invierno', 'Jogging de friza', 5500);
+// arrayProductos.push(producto1, producto2, producto3, producto4, producto5, producto6);
 
-    const ordenarMenorMayor = () => {
-    arrayProductos.sort((a,b) => a.precio - b.precio);
-    }
+//     const ordenarMenorMayor = () => {
+//     arrayProductos.sort((a,b) => a.precio - b.precio);
+//     }
 
-    const ordenarMayorMenor = () => {
-    arrayProductos.sort((a,b) => b.precio - a.precio);
-    }
+//     const ordenarMayorMenor = () => {
+//     arrayProductos.sort((a,b) => b.precio - a.precio);
+//     }
 
-    function filtrarEstacion () {
-              let estacionId = 0;
-              do {
-                        estacionId = parseInt(prompt('Seleccione la estación de la indumentaria que desee comprar:\n1- Verano.\n2- Invierno.'));
-              } while (estacionId !=1 && estacionId !=2);
-              return estacionId;
-    }
+//     function filtrarEstacion () {
+//               let estacionId = 0;
+//               do {
+//                         estacionId = parseInt(prompt('Seleccione la estación de la indumentaria que desee comprar:\n1- Verano.\n2- Invierno.'));
+//               } while (estacionId !=1 && estacionId !=2);
+//               return estacionId;
+//     }
 
-    function consultarOrdenPrecio () {
-              let ordenPrecio = 0;
-              do {
-                        ordenPrecio = parseInt(prompt('Seleccione el orden de precios de los productos:\n1- Mayor a menor.\n2- Menor a mayor.'))
-              } while (ordenPrecio != 1 && ordenPrecio != 2);
-              return ordenPrecio;
-    }
+//     function consultarOrdenPrecio () {
+//               let ordenPrecio = 0;
+//               do {
+//                         ordenPrecio = parseInt(prompt('Seleccione el orden de precios de los productos:\n1- Mayor a menor.\n2- Menor a mayor.'))
+//               } while (ordenPrecio != 1 && ordenPrecio != 2);
+//               return ordenPrecio;
+//     }
 
-    function filtrarProductos (estacionId, ordenPrecio) {
-              let productosFiltrados;
-                        if (estacionId === 1) {
-                                  productosFiltrados = arrayProductos.filter(estaciones => estaciones.estacion === 'Verano');
-                        } else if (estacionId === 2) {
-                                  productosFiltrados = arrayProductos.filter(estaciones => estaciones.estacion === 'Invierno');
-                        }
+//     function filtrarProductos (estacionId, ordenPrecio) {
+//               let productosFiltrados;
+//                         if (estacionId === 1) {
+//                                   productosFiltrados = arrayProductos.filter(estaciones => estaciones.estacion === 'Verano');
+//                         } else if (estacionId === 2) {
+//                                   productosFiltrados = arrayProductos.filter(estaciones => estaciones.estacion === 'Invierno');
+//                         }
 
-                        if (ordenPrecio === 1) {
-                                  productosFiltrados.sort((a,b) => b.precio - a.precio);
-                        } else if (ordenPrecio === 2) {
-                                  productosFiltrados.sort((a,b) => a.precio - b.precio);
-                        }
-                        return productosFiltrados;
-    }
+//                         if (ordenPrecio === 1) {
+//                                   productosFiltrados.sort((a,b) => b.precio - a.precio);
+//                         } else if (ordenPrecio === 2) {
+//                                   productosFiltrados.sort((a,b) => a.precio - b.precio);
+//                         }
+//                         return productosFiltrados;
+//     }
 
-    function seleccionarProducto (productosFiltrados) {
-              let productoId;
-              let productoValido = true;
-              let mensaje = 'Lista de productos de '+productosFiltrados[0].estacion+'.\nIndique el código de la indumentaria que desea comprar:\n(Costo de envío $500. Superando los $30.000, gratis).\n\n';
-              productosFiltrados.forEach( (producto) => {
-                        mensaje += producto.id +'- ' + producto.nombre+ '. $'+producto.precio+'.\n';
-              });
-              do {
-                        productoId = parseInt(prompt(mensaje));
-                        productoValido = validar(productoId, productosFiltrados);
-                        } while (!productoValido);
-                        return productoId;
-              }
+//     function seleccionarProducto (productosFiltrados) {
+//               let productoId;
+//               let productoValido = true;
+//               let mensaje = 'Lista de productos de '+productosFiltrados[0].estacion+'.\nIndique el código de la indumentaria que desea comprar:\n(Costo de envío $500. Superando los $30.000, gratis).\n\n';
+//               productosFiltrados.forEach( (producto) => {
+//                         mensaje += producto.id +'- ' + producto.nombre+ '. $'+producto.precio+'.\n';
+//               });
+//               do {
+//                         productoId = parseInt(prompt(mensaje));
+//                         productoValido = validar(productoId, productosFiltrados);
+//                         } while (!productoValido);
+//                         return productoId;
+//               }
 
-    function validar(productoId, productosFiltrados) {
-              let valido = false;
-              productosFiltrados.forEach( (producto) => {
-                        if (producto.id === productoId) {
-                                  valido = true;
-                        }
-              });
-              return valido;
-    }
+//     function validar(productoId, productosFiltrados) {
+//               let valido = false;
+//               productosFiltrados.forEach( (producto) => {
+//                         if (producto.id === productoId) {
+//                                   valido = true;
+//                         }
+//               });
+//               return valido;
+//     }
 
-    function comprarProducto(productosFiltrados, productoId) {
-              let subTotal = 0;
-              let envio = 0;
-              let cantidadProducto = 0;
-              let producto = productosFiltrados.find( p => p.id === productoId);
+//     function comprarProducto(productosFiltrados, productoId) {
+//               let subTotal = 0;
+//               let envio = 0;
+//               let cantidadProducto = 0;
+//               let producto = productosFiltrados.find( p => p.id === productoId);
 
-              do {
-                        cantidadProducto = parseInt(prompt('Producto elegido: ' + producto.nombre + '.\nIntroduzca la cantidad deseada (sólo números).'));
-              } while (isNaN(cantidadProducto));
+//               do {
+//                         cantidadProducto = parseInt(prompt('Producto elegido: ' + producto.nombre + '.\nIntroduzca la cantidad deseada (sólo números).'));
+//               } while (isNaN(cantidadProducto));
 
-              subTotal = producto.precio * cantidadProducto;
-              envio = calcularEnvio(subTotal);
-              total = subTotal + envio;
+//               subTotal = producto.precio * cantidadProducto;
+//               envio = calcularEnvio(subTotal);
+//               total = subTotal + envio;
 
-              producto.vender();
-              alert('Detalle de la compra en "Guilbas Urban Wear":\n- Indumentaria de estación: ' + producto.estacion + '.\n- Producto: ' + producto.nombre + '.\n- Cantidad de prendas: "' + cantidadProducto + '".\n- Costo del envío: $' + envio + '.\n- Total: $' + total + '.');
-    }
+//               producto.vender();
+//               alert('Detalle de la compra en "Guilbas Urban Wear":\n- Indumentaria de estación: ' + producto.estacion + '.\n- Producto: ' + producto.nombre + '.\n- Cantidad de prendas: "' + cantidadProducto + '".\n- Costo del envío: $' + envio + '.\n- Total: $' + total + '.');
+//     }
 
-    let estacionid = filtrarEstacion();
-    let ordenPrecio = consultarOrdenPrecio();
-    let productosFiltrados = filtrarProductos(estacionid, ordenPrecio);
-    let productoId = seleccionarProducto(productosFiltrados);
-    comprarProducto(productosFiltrados, productoId);
+//     let estacionid = filtrarEstacion();
+//     let ordenPrecio = consultarOrdenPrecio();
+//     let productosFiltrados = filtrarProductos(estacionid, ordenPrecio);
+//     let productoId = seleccionarProducto(productosFiltrados);
+//     comprarProducto(productosFiltrados, productoId);
 
-    console.log(productosFiltrados);
+//     console.log(productosFiltrados);
 
-    alert('Desde Guilbas Urban Wear agradecemos tu compra, te esperamos pronto!');
+//     alert('Desde Guilbas Urban Wear agradecemos tu compra, te esperamos pronto!');
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1837,5 +1837,222 @@ arrayProductos.push(producto1, producto2, producto3, producto4, producto5, produ
 
 
 
-// Ejemplo tienda online
+// EVENTOS  --> Controla las acciones de los usuarios y define un comportamiento de la página o aplicación cuándo se produzcan.
+
+// addEventListener() --> Permite definir que evento escuchar sobre cualquier elemento selccionado.
+// (el 1er parámetro corresponde al nombre del evento y el 2do a la función de respues.).
+
+// EEJEMPLO-1
+// <h2>Coder House</h2>
+// <button id="btnPrincipal">Click</button>
+// <script>
+// let boton = document.getElementById("btnPrincipal")
+// boton.addEventListener("click", respuestaClick)
+// console.log("Respuesta evento");
+// </script>
+
+
+// const boton = document.getElementById('btnPrincipal');
+// boton.addEventListener('click', respuesta);
+
+// function respuesta() {
+//     console.log('Respuesta al click');
+// }
+
+// -----------------------------------------------------------------------------------------------------------
+
+// EJEMPLO-2
+// Emplear una propiedad del "nodo" para definir la respuesta al evento.
+// (Las propiedades se identifican con el nombre del evento y el prefijo on).
+// (También es posible emplear funciones anónimas para definisr losmanejadores de eventos).
+
+// <h2>Coder House</h2>
+// <button id="btnPrincipal">Click</button>
+// <script>
+// let boton = document.getElementById("btnPrincipal")
+// boton.onclick = () => {console.log("Respuesta 2")}
+// </script>
+
+
+// función anónima
+
+// const boton = document.getElementById('btnPrincipal');
+// boton.onclick = function () {
+//     console.log('respuesta1');
+// }
+
+//          o también
+
+// arrow function
+
+// boton.onclick = () => {
+//     console.log('respuesta1');
+// }
+
+
+// EJEMPLO-3 (No recomendado - mala práctica)
+// SINTAXIS
+// Determinar el evento especificando el manejador de evento en el atributo de una atiqueta HTML.
+// (La denominación del atributo es idéntica al de la propiedad de la opción 2).
+// La función puede declarar entre comillas o bien tomarse una referencia existente en el script.
+
+// <input type=button" value="Click2" onclick="alert('Respuesta 3')"; />
+
+
+// -------------------------------------------------------------------------------------------------------------------
+
+// EJEMPLO CONTADOR
+
+// const btnSuma = document.querySelector('.btnSuma');
+// const btnResta = document.querySelector('.btnResta');
+// const resultado = document.getElementById('resultado');
+
+// let contador = 0;
+
+// btnSuma.addEventListener('click', () => {
+//     contador++;
+//     actualizarContador();
+// });
+
+
+// btnResta.addEventListener('click', () => {
+//     if (contador > 0)
+//     contador--;
+//     actualizarContador();
+
+// });
+
+// const actualizarContador = () => {
+//     resultado.innerText = contador;
+// };
+
+
+// EVENTOS DEL MOUSE --> Se producen por la interacción del usuario con el mouse.
+// 1- mousedown/mouseup: Se oprime/suelta el botón del ratón sobre un elemento.
+// 2- mouseove/mouseout: El puntero del mouse se mueve sobre/sale del elemento.
+// 3- mousemove: El movimiento del mouse sobre el elemento activa el evento.
+// 4- click: Se activa después de "mousedown" o "mouseup" sobre un elemento válido.
+
+// let boton = document.getElementById('btnMain');
+// boton.onclick = () => {console.log('Click')};
+// boton.onmousemove = () => {console.log('Move')};
+
+
+// let boton = document.getElementById('btnMain');
+// boton.onclick = () => {console.log('Click')};
+
+
+// EVENTOS DEL TECLADO --> Se reproducen por la interaccióndel usuario con el teclado.
+// 1- keydown: Cuando se presiona.
+// 2- heyup: Cuando se suelta una tecla.
+
+// let input1 = document.getElementById('name');
+// let input2 = document.getElementById('years');
+// input1.onkeyup = () => {console.log('keyUp')};
+// input2.onkeydown = () => {console.log('keyDown')};
+
+
+
+
+// EVENTO CHANGE --> sE ACTIVA CUANDO SE DETECTA UN CAMBIO EN EL VALOR DEL ELEMENTO.
+
+// let input1 = document.getElementById('name');
+// input1.addEventListener('change', () => {
+//        console.log('Valor 1')
+// });
+
+
+// INFORMACIÓN DEL EVENTO
+
+// Necesitamos obtener información contextual del evento para popder realizar acciones.
+// Ej: ante el evento submit necesitamos prevenir el comportamiento por defecto para operar correctamente.
+// Para esto existe en Javascript el "objecto event".
+
+
+// let input1 = document.getElementById('name');
+// input1.addEventListener('change', (e) => {
+//        console.log(e.target.value);
+// });
+
+
+// let input2 = document.getElementById('years');
+// input2.addEventListener('change', (e) => {
+//        console.log(e.target.value);
+// });
+
+
+
+// EVENTO INPUT --> Detecta cada uno de los valores de forma individual caracter por caracter que el usuario ingresa sobre el input.
+
+// const input1 = document.getElementById('name');
+// input1.addEventListener('input', () => {
+//        console.log(input1.value);
+// });
+
+
+// EVENTO SUBMIT --> Se activa cuando el formulario es enviado.
+// Normalmente se utiliza para validar el formulario antes de ser enviado al servidor o para abortar el envío y procesarlo con javascript.
+
+
+// const form = document.getElementById('form');
+// const formName = document.getElementById('formName');
+// const formYears = document.getElementById('formYears');
+
+// form.addEventListener('submit', (e) => {
+//       e.preventDefault();
+
+//       const name = formName.value;
+//       const years = formYears.value;
+
+//       console.log(name, years);
+// });
+
+
+
+// (Usando la clase FromData)
+
+// const form = document.getElementById('form');
+
+// form.addEventListener('submit', (e) => {
+//       e.preventDefault();
+
+//       const formulario = new FormData(form);
+//       const name = formulario.get('formName');
+//       const years = formulario.get('formYears');
+
+//       console.log(name, years);
+// });
+
+
+
+
+
+// CALCULAR EDAD
+
+const calcularEdad = (fecha) => {
+       const fechaActual = new Date();
+       const fechaNacimiento = new Date(fecha);
+       const mesDiferencia = fechaActual.getMonth() - fechaNacimiento.getMonth();
+       const diaDiferencia = fechaActual.getDate() < fechaNacimiento.getDate();
+       let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+       // Si en el año actual todavía no cumplió años le restamos 1 a la edad
+
+       if (mesDiferencia < 0 || (mesDiferencia === 0 && diaDiferencia)) {
+              edad--;
+       };
+
+       return edad;
+};
+
+// usar el elemento change
+
+const fechaNacimiento = document.getElementById('fechaNacimiento');
+
+fechaNacimiento.addEventListener('change', (e) => {
+       const edadActual = calcularEdad(e.target.value);
+
+       alert('Tu edad es: '+ edadActual + ' años.');
+});
+
 
